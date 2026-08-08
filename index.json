@@ -236,7 +236,7 @@
       "description": "EasyBar package updates in the native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.6.1",
+      "latest": "0.6.2",
       "name": "inbox-widgets",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -271,6 +271,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-widgets-v0.6.1/inbox-widgets-0.6.1.tar.gz",
           "sha256": "9a55fc3c80b2f77bcbe4e45ab3f9236085391ec6e972939366e8bd68c2c7ca46",
           "version": "0.6.1"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-widgets-v0.6.2/inbox-widgets-0.6.2.tar.gz",
+          "sha256": "8e6f3836ba22f74f588fef9ce8510bc99365c403c5b34da744e95621dfd8a7c2",
+          "version": "0.6.2"
         }
       ]
     },

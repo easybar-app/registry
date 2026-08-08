@@ -1,7 +1,7 @@
 entry_version = 1
 name = "inbox-github"
 kind = "widget"
-latest = "0.3.1"
+latest = "0.3.2"
 description = "GitHub notifications and pull-request actions in EasyBar's native inbox."
 categories = ["developer-tools", "inbox", "notifications"]
 
@@ -27,3 +27,8 @@ sha256 = "9b65278eb25b0385dc966c47bfbf8c51e59debac724132e2f9e840f3c4b4f2ae"
 version = "0.3.1"
 archive = "https://github.com/easybar-app/widgets/releases/download/inbox-github-v0.3.1/inbox-github-0.3.1.tar.gz"
 sha256 = "19a7cd20644de716207816db91f0f08e76127734d4d91c54ce106ee8500c96c8"
+
+[[versions]]
+version = "0.3.2"
+archive = "https://github.com/easybar-app/widgets/releases/download/inbox-github-v0.3.2/inbox-github-0.3.2.tar.gz"
+sha256 = "d4f4a8ac888017c19255d1d7ac09926879ea71bf584bd02fc0076cffd8a98254"

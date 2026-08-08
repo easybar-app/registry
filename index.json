@@ -11,10 +11,15 @@
       "latest": "0.1.0",
       "name": "brew",
       "source": {
-        "manifest": "packages/brew/package.toml",
-        "ref": "main",
         "repository": "https://github.com/easybar-app/widgets"
-      }
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/brew-v0.1.0/brew-0.1.0.tar.gz",
+          "sha256": "039f73516e0cb7e4dab1bf3cbc664c6d9bd1680cd97cdfe20c5cc9523d736c5a",
+          "version": "0.1.0"
+        }
+      ]
     },
     {
       "categories": [
@@ -27,10 +32,15 @@
       "latest": "0.1.0",
       "name": "caffeinate",
       "source": {
-        "manifest": "packages/caffeinate/package.toml",
-        "ref": "main",
         "repository": "https://github.com/easybar-app/widgets"
-      }
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/caffeinate-v0.1.0/caffeinate-0.1.0.tar.gz",
+          "sha256": "a2f644258a62553e4808485e7631b15122d939460942f20d6de3cdb380415ed0",
+          "version": "0.1.0"
+        }
+      ]
     },
     {
       "categories": [
@@ -43,10 +53,15 @@
       "latest": "0.1.0",
       "name": "github",
       "source": {
-        "manifest": "packages/github/package.toml",
-        "ref": "main",
         "repository": "https://github.com/easybar-app/widgets"
-      }
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/github-v0.1.0/github-0.1.0.tar.gz",
+          "sha256": "b5b2c72a70746f8451d7579255b4e27db20b3da848d4193075b25758af09f15d",
+          "version": "0.1.0"
+        }
+      ]
     },
     {
       "categories": [
@@ -59,10 +74,15 @@
       "latest": "0.1.0",
       "name": "gitlab",
       "source": {
-        "manifest": "packages/gitlab/package.toml",
-        "ref": "main",
         "repository": "https://github.com/easybar-app/widgets"
-      }
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/gitlab-v0.1.0/gitlab-0.1.0.tar.gz",
+          "sha256": "6f45140a379819e2300cf3333c4f9507ef0edda549da97876af14274bd5273dc",
+          "version": "0.1.0"
+        }
+      ]
     },
     {
       "categories": [
@@ -76,10 +96,15 @@
       "latest": "0.1.0",
       "name": "inbox-brew",
       "source": {
-        "manifest": "packages/inbox-brew/package.toml",
-        "ref": "main",
         "repository": "https://github.com/easybar-app/widgets"
-      }
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.1.0/inbox-brew-0.1.0.tar.gz",
+          "sha256": "2902150c0d9ec61f51d0d6565ac7c5778c9912c1c092a2f090675282f7389356",
+          "version": "0.1.0"
+        }
+      ]
     },
     {
       "categories": [
@@ -93,10 +118,15 @@
       "latest": "0.1.0",
       "name": "inbox-github",
       "source": {
-        "manifest": "packages/inbox-github/package.toml",
-        "ref": "main",
         "repository": "https://github.com/easybar-app/widgets"
-      }
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-github-v0.1.0/inbox-github-0.1.0.tar.gz",
+          "sha256": "d6ea7b5f06829da01040fbeeebd73925861fc2a9999279fedc304fb598901922",
+          "version": "0.1.0"
+        }
+      ]
     },
     {
       "categories": [
@@ -110,10 +140,15 @@
       "latest": "0.1.0",
       "name": "inbox-gitlab",
       "source": {
-        "manifest": "packages/inbox-gitlab/package.toml",
-        "ref": "main",
         "repository": "https://github.com/easybar-app/widgets"
-      }
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-gitlab-v0.1.0/inbox-gitlab-0.1.0.tar.gz",
+          "sha256": "826030c07f05f92c201c5ec2adcc26eace8c20e1422556ff3b5ee4917aba1ce0",
+          "version": "0.1.0"
+        }
+      ]
     },
     {
       "categories": [
@@ -125,10 +160,15 @@
       "latest": "0.1.0",
       "name": "shared",
       "source": {
-        "manifest": "packages/shared/package.toml",
-        "ref": "main",
         "repository": "https://github.com/easybar-app/widgets"
-      }
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/shared-v0.1.0/shared-0.1.0.tar.gz",
+          "sha256": "318cd1a7666007fdd1d9a50407409ddd606e147924b65e43db01d3c801ca2946",
+          "version": "0.1.0"
+        }
+      ]
     },
     {
       "categories": [
@@ -141,10 +181,15 @@
       "latest": "0.1.0",
       "name": "tailscale",
       "source": {
-        "manifest": "packages/tailscale/package.toml",
-        "ref": "main",
         "repository": "https://github.com/easybar-app/widgets"
-      }
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/tailscale-v0.1.0/tailscale-0.1.0.tar.gz",
+          "sha256": "e60afa70e790d25edc6c2446701342588fa277603cd7818a646aee565d139760",
+          "version": "0.1.0"
+        }
+      ]
     },
     {
       "categories": [
@@ -157,10 +202,15 @@
       "latest": "0.1.0",
       "name": "wireguard",
       "source": {
-        "manifest": "packages/wireguard/package.toml",
-        "ref": "main",
         "repository": "https://github.com/easybar-app/widgets"
-      }
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/wireguard-v0.1.0/wireguard-0.1.0.tar.gz",
+          "sha256": "e0034e81e57583b0c79e7a0214f964a2ac1d97cb548adadc8a6844532cfed9a0",
+          "version": "0.1.0"
+        }
+      ]
     }
   ],
   "registry_version": 1

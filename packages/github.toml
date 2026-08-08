@@ -7,5 +7,8 @@ categories = ["developer-tools", "notifications"]
 
 [source]
 repository = "https://github.com/easybar-app/widgets"
-ref = "main"
-manifest = "packages/github/package.toml"
+
+[[versions]]
+version = "0.1.0"
+archive = "https://github.com/easybar-app/widgets/releases/download/github-v0.1.0/github-0.1.0.tar.gz"
+sha256 = "b5b2c72a70746f8451d7579255b4e27db20b3da848d4193075b25758af09f15d"

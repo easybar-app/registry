@@ -7,5 +7,8 @@ categories = ["developer-tools", "inbox", "notifications"]
 
 [source]
 repository = "https://github.com/easybar-app/widgets"
-ref = "main"
-manifest = "packages/inbox-github/package.toml"
+
+[[versions]]
+version = "0.1.0"
+archive = "https://github.com/easybar-app/widgets/releases/download/inbox-github-v0.1.0/inbox-github-0.1.0.tar.gz"
+sha256 = "d6ea7b5f06829da01040fbeeebd73925861fc2a9999279fedc304fb598901922"

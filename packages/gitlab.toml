@@ -7,5 +7,8 @@ categories = ["developer-tools", "notifications"]
 
 [source]
 repository = "https://github.com/easybar-app/widgets"
-ref = "main"
-manifest = "packages/gitlab/package.toml"
+
+[[versions]]
+version = "0.1.0"
+archive = "https://github.com/easybar-app/widgets/releases/download/gitlab-v0.1.0/gitlab-0.1.0.tar.gz"
+sha256 = "6f45140a379819e2300cf3333c4f9507ef0edda549da97876af14274bd5273dc"

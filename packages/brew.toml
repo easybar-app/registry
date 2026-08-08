@@ -7,5 +7,8 @@ categories = ["developer-tools", "system"]
 
 [source]
 repository = "https://github.com/easybar-app/widgets"
-ref = "main"
-manifest = "packages/brew/package.toml"
+
+[[versions]]
+version = "0.1.0"
+archive = "https://github.com/easybar-app/widgets/releases/download/brew-v0.1.0/brew-0.1.0.tar.gz"
+sha256 = "039f73516e0cb7e4dab1bf3cbc664c6d9bd1680cd97cdfe20c5cc9523d736c5a"

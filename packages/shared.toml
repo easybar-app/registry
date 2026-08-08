@@ -7,5 +7,8 @@ categories = ["library"]
 
 [source]
 repository = "https://github.com/easybar-app/widgets"
-ref = "main"
-manifest = "packages/shared/package.toml"
+
+[[versions]]
+version = "0.1.0"
+archive = "https://github.com/easybar-app/widgets/releases/download/shared-v0.1.0/shared-0.1.0.tar.gz"
+sha256 = "318cd1a7666007fdd1d9a50407409ddd606e147924b65e43db01d3c801ca2946"

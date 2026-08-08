@@ -1,7 +1,7 @@
 entry_version = 1
 name = "inbox-widgets"
 kind = "widget"
-latest = "0.6.0"
+latest = "0.6.1"
 description = "EasyBar package updates in the native inbox."
 categories = ["inbox", "system", "utilities"]
 
@@ -32,3 +32,8 @@ sha256 = "43428ea1b8a90836eb07b54a4cbab1ae862ec95e6ba1284b1359bdaea582326c"
 version = "0.6.0"
 archive = "https://github.com/easybar-app/widgets/releases/download/inbox-widgets-v0.6.0/inbox-widgets-0.6.0.tar.gz"
 sha256 = "5f2e454531d6a870c8b698feeaa7b1645863a6e529d40fe125f7fb31069f8a4d"
+
+[[versions]]
+version = "0.6.1"
+archive = "https://github.com/easybar-app/widgets/releases/download/inbox-widgets-v0.6.1/inbox-widgets-0.6.1.tar.gz"
+sha256 = "9a55fc3c80b2f77bcbe4e45ab3f9236085391ec6e972939366e8bd68c2c7ca46"

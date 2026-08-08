@@ -1,7 +1,7 @@
 entry_version = 1
 name = "inbox-gitlab"
 kind = "widget"
-latest = "0.3.0"
+latest = "0.3.1"
 description = "GitLab work items and merge-request actions in EasyBar's native inbox."
 categories = ["developer-tools", "inbox", "notifications"]
 
@@ -22,3 +22,8 @@ sha256 = "dcfb11cfa3d00da1a19112222db22732980e1eeb7f8beb7b81ae1f68e2da5141"
 version = "0.3.0"
 archive = "https://github.com/easybar-app/widgets/releases/download/inbox-gitlab-v0.3.0/inbox-gitlab-0.3.0.tar.gz"
 sha256 = "3f1949f69584db17f0dd324261e43772a14a655979f721bb812095308efe4d64"
+
+[[versions]]
+version = "0.3.1"
+archive = "https://github.com/easybar-app/widgets/releases/download/inbox-gitlab-v0.3.1/inbox-gitlab-0.3.1.tar.gz"
+sha256 = "973f207afa130c4a0e9fba399f6956cb4c12fb64404e83b5935feda96117259a"

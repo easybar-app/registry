@@ -120,7 +120,7 @@
       "description": "Homebrew updates and actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.3.0",
+      "latest": "0.3.1",
       "name": "inbox-brew",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -145,6 +145,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.3.0/inbox-brew-0.3.0.tar.gz",
           "sha256": "11fcebba8bfa34f73baecf8dc2c76b0e6add6cba0b2df9f9f4091495478b028b",
           "version": "0.3.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.3.1/inbox-brew-0.3.1.tar.gz",
+          "sha256": "2a9de7955fd05d970592e0490ef2d3ce7b8e5b09d8f5cab884579168517accda",
+          "version": "0.3.1"
         }
       ]
     },
@@ -157,7 +162,7 @@
       "description": "GitHub notifications and pull-request actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.3.0",
+      "latest": "0.3.1",
       "name": "inbox-github",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -177,6 +182,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-github-v0.3.0/inbox-github-0.3.0.tar.gz",
           "sha256": "9b65278eb25b0385dc966c47bfbf8c51e59debac724132e2f9e840f3c4b4f2ae",
           "version": "0.3.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-github-v0.3.1/inbox-github-0.3.1.tar.gz",
+          "sha256": "19a7cd20644de716207816db91f0f08e76127734d4d91c54ce106ee8500c96c8",
+          "version": "0.3.1"
         }
       ]
     },
@@ -189,7 +199,7 @@
       "description": "GitLab work items and merge-request actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.3.0",
+      "latest": "0.3.1",
       "name": "inbox-gitlab",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -209,6 +219,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-gitlab-v0.3.0/inbox-gitlab-0.3.0.tar.gz",
           "sha256": "3f1949f69584db17f0dd324261e43772a14a655979f721bb812095308efe4d64",
           "version": "0.3.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-gitlab-v0.3.1/inbox-gitlab-0.3.1.tar.gz",
+          "sha256": "973f207afa130c4a0e9fba399f6956cb4c12fb64404e83b5935feda96117259a",
+          "version": "0.3.1"
         }
       ]
     },
@@ -221,7 +236,7 @@
       "description": "EasyBar package updates in the native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.6.0",
+      "latest": "0.6.1",
       "name": "inbox-widgets",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -251,6 +266,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-widgets-v0.6.0/inbox-widgets-0.6.0.tar.gz",
           "sha256": "5f2e454531d6a870c8b698feeaa7b1645863a6e529d40fe125f7fb31069f8a4d",
           "version": "0.6.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-widgets-v0.6.1/inbox-widgets-0.6.1.tar.gz",
+          "sha256": "9a55fc3c80b2f77bcbe4e45ab3f9236085391ec6e972939366e8bd68c2c7ca46",
+          "version": "0.6.1"
         }
       ]
     },

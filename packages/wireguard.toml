@@ -1,0 +1,11 @@
+entry_version = 1
+name = "wireguard"
+kind = "widget"
+latest = "0.1.0"
+description = "Control a macOS Network Extension VPN service with scutil."
+categories = ["network", "system"]
+
+[source]
+repository = "https://github.com/easybar-app/widgets"
+ref = "main"
+manifest = "packages/wireguard/package.toml"

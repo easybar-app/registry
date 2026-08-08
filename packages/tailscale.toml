@@ -1,0 +1,11 @@
+entry_version = 1
+name = "tailscale"
+kind = "widget"
+latest = "0.1.0"
+description = "Tailscale status, connection controls, and exit-node selection."
+categories = ["network", "system"]
+
+[source]
+repository = "https://github.com/easybar-app/widgets"
+ref = "main"
+manifest = "packages/tailscale/package.toml"

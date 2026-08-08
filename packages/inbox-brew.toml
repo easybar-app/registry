@@ -1,0 +1,11 @@
+entry_version = 1
+name = "inbox-brew"
+kind = "widget"
+latest = "0.1.0"
+description = "Homebrew updates and actions in EasyBar's native inbox."
+categories = ["developer-tools", "inbox", "system"]
+
+[source]
+repository = "https://github.com/easybar-app/widgets"
+ref = "main"
+manifest = "packages/inbox-brew/package.toml"

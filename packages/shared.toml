@@ -1,0 +1,11 @@
+entry_version = 1
+name = "shared"
+kind = "library"
+latest = "0.1.0"
+description = "Shared text, retry, and native-inbox helpers for official EasyBar widgets."
+categories = ["library"]
+
+[source]
+repository = "https://github.com/easybar-app/widgets"
+ref = "main"
+manifest = "packages/shared/package.toml"

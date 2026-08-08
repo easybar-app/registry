@@ -1,0 +1,27 @@
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout registry
+        uses: actions/checkout@v7
+
+      - name: Checkout widgets
+        uses: actions/checkout@v7
+        with:
+          repository: easybar-app/widgets
+          path: widgets-source
+
+      - name: Validate registry
+        run: make check WIDGETS_DIR=widgets-source

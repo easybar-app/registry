@@ -1,0 +1,11 @@
+entry_version = 1
+name = "brew"
+kind = "widget"
+latest = "0.1.0"
+description = "Homebrew updates and upgrades in a standalone popup."
+categories = ["developer-tools", "system"]
+
+[source]
+repository = "https://github.com/easybar-app/widgets"
+ref = "main"
+manifest = "packages/brew/package.toml"

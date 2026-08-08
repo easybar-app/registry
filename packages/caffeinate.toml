@@ -1,0 +1,11 @@
+entry_version = 1
+name = "caffeinate"
+kind = "widget"
+latest = "0.1.0"
+description = "Keep macOS awake indefinitely or for a selected duration."
+categories = ["system", "utilities"]
+
+[source]
+repository = "https://github.com/easybar-app/widgets"
+ref = "main"
+manifest = "packages/caffeinate/package.toml"

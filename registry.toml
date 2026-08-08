@@ -1,0 +1,4 @@
+registry_version = 1
+name = "easybar"
+description = "Official EasyBar widget and Lua library registry."
+entries = "packages"

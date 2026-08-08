@@ -1,0 +1,11 @@
+entry_version = 1
+name = "inbox-github"
+kind = "widget"
+latest = "0.1.0"
+description = "GitHub notifications and pull-request actions in EasyBar's native inbox."
+categories = ["developer-tools", "inbox", "notifications"]
+
+[source]
+repository = "https://github.com/easybar-app/widgets"
+ref = "main"
+manifest = "packages/inbox-github/package.toml"

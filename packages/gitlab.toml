@@ -1,0 +1,11 @@
+entry_version = 1
+name = "gitlab"
+kind = "widget"
+latest = "0.1.0"
+description = "Assigned GitLab issues and merge requests in a standalone popup."
+categories = ["developer-tools", "notifications"]
+
+[source]
+repository = "https://github.com/easybar-app/widgets"
+ref = "main"
+manifest = "packages/gitlab/package.toml"

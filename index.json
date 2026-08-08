@@ -1,0 +1,167 @@
+{
+  "packages": [
+    {
+      "categories": [
+        "developer-tools",
+        "system"
+      ],
+      "description": "Homebrew updates and upgrades in a standalone popup.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "brew",
+      "source": {
+        "manifest": "packages/brew/package.toml",
+        "ref": "main",
+        "repository": "https://github.com/easybar-app/widgets"
+      }
+    },
+    {
+      "categories": [
+        "system",
+        "utilities"
+      ],
+      "description": "Keep macOS awake indefinitely or for a selected duration.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "caffeinate",
+      "source": {
+        "manifest": "packages/caffeinate/package.toml",
+        "ref": "main",
+        "repository": "https://github.com/easybar-app/widgets"
+      }
+    },
+    {
+      "categories": [
+        "developer-tools",
+        "notifications"
+      ],
+      "description": "GitHub notifications in a standalone popup.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "github",
+      "source": {
+        "manifest": "packages/github/package.toml",
+        "ref": "main",
+        "repository": "https://github.com/easybar-app/widgets"
+      }
+    },
+    {
+      "categories": [
+        "developer-tools",
+        "notifications"
+      ],
+      "description": "Assigned GitLab issues and merge requests in a standalone popup.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "gitlab",
+      "source": {
+        "manifest": "packages/gitlab/package.toml",
+        "ref": "main",
+        "repository": "https://github.com/easybar-app/widgets"
+      }
+    },
+    {
+      "categories": [
+        "developer-tools",
+        "inbox",
+        "system"
+      ],
+      "description": "Homebrew updates and actions in EasyBar's native inbox.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "inbox-brew",
+      "source": {
+        "manifest": "packages/inbox-brew/package.toml",
+        "ref": "main",
+        "repository": "https://github.com/easybar-app/widgets"
+      }
+    },
+    {
+      "categories": [
+        "developer-tools",
+        "inbox",
+        "notifications"
+      ],
+      "description": "GitHub notifications and pull-request actions in EasyBar's native inbox.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "inbox-github",
+      "source": {
+        "manifest": "packages/inbox-github/package.toml",
+        "ref": "main",
+        "repository": "https://github.com/easybar-app/widgets"
+      }
+    },
+    {
+      "categories": [
+        "developer-tools",
+        "inbox",
+        "notifications"
+      ],
+      "description": "GitLab work items and merge-request actions in EasyBar's native inbox.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "inbox-gitlab",
+      "source": {
+        "manifest": "packages/inbox-gitlab/package.toml",
+        "ref": "main",
+        "repository": "https://github.com/easybar-app/widgets"
+      }
+    },
+    {
+      "categories": [
+        "library"
+      ],
+      "description": "Shared text, retry, and native-inbox helpers for official EasyBar widgets.",
+      "entry_version": 1,
+      "kind": "library",
+      "latest": "0.1.0",
+      "name": "shared",
+      "source": {
+        "manifest": "packages/shared/package.toml",
+        "ref": "main",
+        "repository": "https://github.com/easybar-app/widgets"
+      }
+    },
+    {
+      "categories": [
+        "network",
+        "system"
+      ],
+      "description": "Tailscale status, connection controls, and exit-node selection.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "tailscale",
+      "source": {
+        "manifest": "packages/tailscale/package.toml",
+        "ref": "main",
+        "repository": "https://github.com/easybar-app/widgets"
+      }
+    },
+    {
+      "categories": [
+        "network",
+        "system"
+      ],
+      "description": "Control a macOS Network Extension VPN service with scutil.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "wireguard",
+      "source": {
+        "manifest": "packages/wireguard/package.toml",
+        "ref": "main",
+        "repository": "https://github.com/easybar-app/widgets"
+      }
+    }
+  ],
+  "registry_version": 1
+}

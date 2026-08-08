@@ -3,12 +3,34 @@
     {
       "categories": [
         "developer-tools",
+        "library",
+        "system"
+      ],
+      "description": "Shared Homebrew manual-upgrade policy for EasyBar widgets.",
+      "entry_version": 1,
+      "kind": "library",
+      "latest": "0.1.0",
+      "name": "brew-policy",
+      "source": {
+        "repository": "https://github.com/easybar-app/widgets"
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/brew-policy-v0.1.0/brew-policy-0.1.0.tar.gz",
+          "sha256": "9b8bce2d9b90c74b081ce797394f8f8473ed9a88594d06a11e150e1b3ebdac76",
+          "version": "0.1.0"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "developer-tools",
         "system"
       ],
       "description": "Homebrew updates and upgrades in a standalone popup.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.0",
+      "latest": "0.2.0",
       "name": "brew",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -18,6 +40,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/brew-v0.1.0/brew-0.1.0.tar.gz",
           "sha256": "039f73516e0cb7e4dab1bf3cbc664c6d9bd1680cd97cdfe20c5cc9523d736c5a",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/brew-v0.2.0/brew-0.2.0.tar.gz",
+          "sha256": "1c87a14a282258b34b6a30250a47877e3fde9731ddbd11875f87392a221a76e3",
+          "version": "0.2.0"
         }
       ]
     },
@@ -93,7 +120,7 @@
       "description": "Homebrew updates and actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.0",
+      "latest": "0.1.1",
       "name": "inbox-brew",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -103,6 +130,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.1.0/inbox-brew-0.1.0.tar.gz",
           "sha256": "2902150c0d9ec61f51d0d6565ac7c5778c9912c1c092a2f090675282f7389356",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.1.1/inbox-brew-0.1.1.tar.gz",
+          "sha256": "7ab0d80c78757720b58f4d4108b8fe88587afc62c968f161ff229162fdaf9176",
+          "version": "0.1.1"
         }
       ]
     },

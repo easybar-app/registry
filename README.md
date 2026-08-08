@@ -21,3 +21,26 @@ make check
 ```
 
 The check validates every entry, cross-checks it against package metadata, reproduces each latest archive to verify its digest, and ensures `index.json` is current.
+
+## Release synchronization
+
+The `Sync widget releases` workflow runs twice per hour and can also be started manually from
+GitHub Actions. It discovers published releases from `easybar-app/widgets`, downloads each package
+archive and checksum, verifies their SHA-256 digest, reads the packaged manifest, updates immutable
+version entries, regenerates `index.json`, validates the result, and commits only when the registry
+changed.
+
+Existing versions are immutable. If a previously recorded archive or checksum changes, or a
+published historical release disappears, synchronization fails instead of rewriting trusted
+metadata.
+
+Synchronization only updates packages that already have a file below `packages/`. Adding a package
+to the official registry remains an explicit review decision; publishing a new version of an
+already registered package is automatic and requires no cross-repository secret.
+
+Run the same reconciliation locally with:
+
+```sh
+make sync
+make check
+```

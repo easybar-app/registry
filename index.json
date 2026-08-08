@@ -120,7 +120,7 @@
       "description": "Homebrew updates and actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.1",
+      "latest": "0.2.0",
       "name": "inbox-brew",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -135,6 +135,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.1.1/inbox-brew-0.1.1.tar.gz",
           "sha256": "7ab0d80c78757720b58f4d4108b8fe88587afc62c968f161ff229162fdaf9176",
           "version": "0.1.1"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.2.0/inbox-brew-0.2.0.tar.gz",
+          "sha256": "678b84b5cbb4f4cb324e87d9d473c7f0756088b6e3e01143dbc9bf47daf7f4b1",
+          "version": "0.2.0"
         }
       ]
     },
@@ -147,7 +152,7 @@
       "description": "GitHub notifications and pull-request actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.0",
+      "latest": "0.2.0",
       "name": "inbox-github",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -157,6 +162,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-github-v0.1.0/inbox-github-0.1.0.tar.gz",
           "sha256": "d6ea7b5f06829da01040fbeeebd73925861fc2a9999279fedc304fb598901922",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-github-v0.2.0/inbox-github-0.2.0.tar.gz",
+          "sha256": "d2c7e9aa6e4b34409667d0b84b274f37a40360a91981b71d095a559078f37e98",
+          "version": "0.2.0"
         }
       ]
     },
@@ -169,7 +179,7 @@
       "description": "GitLab work items and merge-request actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.0",
+      "latest": "0.2.0",
       "name": "inbox-gitlab",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -179,6 +189,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-gitlab-v0.1.0/inbox-gitlab-0.1.0.tar.gz",
           "sha256": "826030c07f05f92c201c5ec2adcc26eace8c20e1422556ff3b5ee4917aba1ce0",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-gitlab-v0.2.0/inbox-gitlab-0.2.0.tar.gz",
+          "sha256": "dcfb11cfa3d00da1a19112222db22732980e1eeb7f8beb7b81ae1f68e2da5141",
+          "version": "0.2.0"
         }
       ]
     },
@@ -191,16 +206,26 @@
       "description": "EasyBar package updates in the native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.0",
-      "name": "inbox-widget-updates",
+      "latest": "0.4.0",
+      "name": "inbox-widgets",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
       },
       "versions": [
         {
-          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-widget-updates-v0.1.0/inbox-widget-updates-0.1.0.tar.gz",
-          "sha256": "e632a30da5024ae670e5497bcbdaf760a1c7f13bff419a77fc6b4a7dd9ceb433",
-          "version": "0.1.0"
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-widgets-v0.2.0/inbox-widgets-0.2.0.tar.gz",
+          "sha256": "531df6d8a7edb00703dff3649fe455b4c5f8f241a77e59f14ac36fa1b3b30399",
+          "version": "0.2.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-widgets-v0.3.0/inbox-widgets-0.3.0.tar.gz",
+          "sha256": "d3df5b9b0a8430f5b4d74b0cc9dfa220380c09182a358af75d3f4ce746b98748",
+          "version": "0.3.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-widgets-v0.4.0/inbox-widgets-0.4.0.tar.gz",
+          "sha256": "82ecc4fd13094931c7d65418c539f197eff4cc21b99f483b1f46e3a5431aa3d8",
+          "version": "0.4.0"
         }
       ]
     },

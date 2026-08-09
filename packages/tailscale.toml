@@ -1,7 +1,7 @@
 entry_version = 1
 name = "tailscale"
 kind = "widget"
-latest = "0.1.0"
+latest = "0.1.1"
 description = "Tailscale status, connection controls, and exit-node selection."
 categories = ["network", "system"]
 
@@ -12,3 +12,8 @@ repository = "https://github.com/easybar-app/widgets"
 version = "0.1.0"
 archive = "https://github.com/easybar-app/widgets/releases/download/tailscale-v0.1.0/tailscale-0.1.0.tar.gz"
 sha256 = "e60afa70e790d25edc6c2446701342588fa277603cd7818a646aee565d139760"
+
+[[versions]]
+version = "0.1.1"
+archive = "https://github.com/easybar-app/widgets/releases/download/tailscale-v0.1.1/tailscale-0.1.1.tar.gz"
+sha256 = "0bae293f9f20896ee76f1a33cfa877f1f92b153ab04b42a157ea73245190e1e6"

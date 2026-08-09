@@ -30,7 +30,7 @@
       "description": "Homebrew updates and upgrades in a standalone popup.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.2.0",
+      "latest": "0.2.1",
       "name": "brew",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -45,6 +45,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/brew-v0.2.0/brew-0.2.0.tar.gz",
           "sha256": "1c87a14a282258b34b6a30250a47877e3fde9731ddbd11875f87392a221a76e3",
           "version": "0.2.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/brew-v0.2.1/brew-0.2.1.tar.gz",
+          "sha256": "f40b210e92049c6cd9113a3e21265620a842d552fe3e00d3acafe26d20f0f3fe",
+          "version": "0.2.1"
         }
       ]
     },
@@ -56,7 +61,7 @@
       "description": "Keep macOS awake indefinitely or for a selected duration.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.0",
+      "latest": "0.1.1",
       "name": "caffeinate",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -66,6 +71,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/caffeinate-v0.1.0/caffeinate-0.1.0.tar.gz",
           "sha256": "a2f644258a62553e4808485e7631b15122d939460942f20d6de3cdb380415ed0",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/caffeinate-v0.1.1/caffeinate-0.1.1.tar.gz",
+          "sha256": "f346daecc38f6d777a5d0fe1f69515926ecc1d3f42c8e5ea99eca095c0f330cc",
+          "version": "0.1.1"
         }
       ]
     },
@@ -120,7 +130,7 @@
       "description": "Homebrew updates and actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.4.0",
+      "latest": "0.4.1",
       "name": "inbox-brew",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -160,6 +170,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.4.0/inbox-brew-0.4.0.tar.gz",
           "sha256": "e2682747a045357730e51925e0b8889eb17717e8ec228fb799f3b74cbc11075e",
           "version": "0.4.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.4.1/inbox-brew-0.4.1.tar.gz",
+          "sha256": "1c29c8dccfac135774b72aa52272084666af95623f088f906b23e9573f933874",
+          "version": "0.4.1"
         }
       ]
     },
@@ -172,7 +187,7 @@
       "description": "GitHub notifications and pull-request actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.5.0",
+      "latest": "0.5.1",
       "name": "inbox-github",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -217,6 +232,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-github-v0.5.0/inbox-github-0.5.0.tar.gz",
           "sha256": "ed4f44a1caace7a79bc9f3dc4c0a180e2f9c60dc5809c3de2732c1f442c68b3a",
           "version": "0.5.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-github-v0.5.1/inbox-github-0.5.1.tar.gz",
+          "sha256": "aeb3ae2599c0199ad5e50262ab64b0646f8298cab679efca12f4f94aa114dd62",
+          "version": "0.5.1"
         }
       ]
     },
@@ -229,7 +249,7 @@
       "description": "GitLab work items and merge-request actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.4.0",
+      "latest": "0.4.1",
       "name": "inbox-gitlab",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -269,6 +289,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-gitlab-v0.4.0/inbox-gitlab-0.4.0.tar.gz",
           "sha256": "3526b8c9562675e73754eaf48d426ef7107d9a7e619406306b9fbfb253d8d311",
           "version": "0.4.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-gitlab-v0.4.1/inbox-gitlab-0.4.1.tar.gz",
+          "sha256": "10768d21cba387f48d7267443995f24a4f69781aca4c2749b35e035ae7fd1e0a",
+          "version": "0.4.1"
         }
       ]
     },
@@ -281,7 +306,7 @@
       "description": "EasyBar package updates in the native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.7.0",
+      "latest": "0.7.1",
       "name": "inbox-widgets",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -331,6 +356,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-widgets-v0.7.0/inbox-widgets-0.7.0.tar.gz",
           "sha256": "9441e95e7be75b4a35ede491ab9f7ef5e81246eaba272ba73921d9b73c2b881c",
           "version": "0.7.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-widgets-v0.7.1/inbox-widgets-0.7.1.tar.gz",
+          "sha256": "27b42b8d3156e7c0664f7a3ab499f45f185cacd000facf347c6873918115aee2",
+          "version": "0.7.1"
         }
       ]
     },
@@ -341,7 +371,7 @@
       "description": "Shared text, retry, and native-inbox helpers for official EasyBar widgets.",
       "entry_version": 1,
       "kind": "library",
-      "latest": "0.1.0",
+      "latest": "0.1.1",
       "name": "shared",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -351,6 +381,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/shared-v0.1.0/shared-0.1.0.tar.gz",
           "sha256": "318cd1a7666007fdd1d9a50407409ddd606e147924b65e43db01d3c801ca2946",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/shared-v0.1.1/shared-0.1.1.tar.gz",
+          "sha256": "f86b28dc9146e34a6edbee51e09175ef5ecf5a68c4b7c76c8afe3a0f4e0a9693",
+          "version": "0.1.1"
         }
       ]
     },
@@ -362,7 +397,7 @@
       "description": "Tailscale status, connection controls, and exit-node selection.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.0",
+      "latest": "0.1.1",
       "name": "tailscale",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -372,6 +407,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/tailscale-v0.1.0/tailscale-0.1.0.tar.gz",
           "sha256": "e60afa70e790d25edc6c2446701342588fa277603cd7818a646aee565d139760",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/tailscale-v0.1.1/tailscale-0.1.1.tar.gz",
+          "sha256": "0bae293f9f20896ee76f1a33cfa877f1f92b153ab04b42a157ea73245190e1e6",
+          "version": "0.1.1"
         }
       ]
     },
@@ -383,7 +423,7 @@
       "description": "Control a macOS Network Extension VPN service with scutil.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.0",
+      "latest": "0.1.1",
       "name": "wireguard",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -393,6 +433,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/wireguard-v0.1.0/wireguard-0.1.0.tar.gz",
           "sha256": "e0034e81e57583b0c79e7a0214f964a2ac1d97cb548adadc8a6844532cfed9a0",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/wireguard-v0.1.1/wireguard-0.1.1.tar.gz",
+          "sha256": "4ee83cfd3e76aaa9aab9a25203c6ed0cfd23a513e4bc56014230ed31a2a462c8",
+          "version": "0.1.1"
         }
       ]
     }

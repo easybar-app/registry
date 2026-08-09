@@ -1,7 +1,7 @@
 entry_version = 1
 name = "caffeinate"
 kind = "widget"
-latest = "0.1.0"
+latest = "0.1.1"
 description = "Keep macOS awake indefinitely or for a selected duration."
 categories = ["system", "utilities"]
 
@@ -12,3 +12,8 @@ repository = "https://github.com/easybar-app/widgets"
 version = "0.1.0"
 archive = "https://github.com/easybar-app/widgets/releases/download/caffeinate-v0.1.0/caffeinate-0.1.0.tar.gz"
 sha256 = "a2f644258a62553e4808485e7631b15122d939460942f20d6de3cdb380415ed0"
+
+[[versions]]
+version = "0.1.1"
+archive = "https://github.com/easybar-app/widgets/releases/download/caffeinate-v0.1.1/caffeinate-0.1.1.tar.gz"
+sha256 = "f346daecc38f6d777a5d0fe1f69515926ecc1d3f42c8e5ea99eca095c0f330cc"

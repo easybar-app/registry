@@ -35,7 +35,7 @@ def load(path: Path) -> dict:
 def request(url: str, token: str | None, limit: int) -> tuple[bytes, dict[str, str]]:
     headers = {
         "Accept": "application/vnd.github+json",
-        "User-Agent": "easybar-widget-registry",
+        "User-Agent": "easybar-registry",
         "X-GitHub-Api-Version": "2022-11-28",
     }
     if token and urllib.parse.urlparse(url).hostname == "api.github.com":

@@ -1,7 +1,7 @@
 entry_version = 1
 name = "inbox-brew"
 kind = "widget"
-latest = "0.3.2"
+latest = "0.4.0"
 description = "Homebrew updates and actions in EasyBar's native inbox."
 categories = ["developer-tools", "inbox", "system"]
 
@@ -37,3 +37,8 @@ sha256 = "2a9de7955fd05d970592e0490ef2d3ce7b8e5b09d8f5cab884579168517accda"
 version = "0.3.2"
 archive = "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.3.2/inbox-brew-0.3.2.tar.gz"
 sha256 = "4a198b3db21bd1e23963c35df7086c4ff6c854a85f14d73408e8f6bf6f40e520"
+
+[[versions]]
+version = "0.4.0"
+archive = "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.4.0/inbox-brew-0.4.0.tar.gz"
+sha256 = "e2682747a045357730e51925e0b8889eb17717e8ec228fb799f3b74cbc11075e"

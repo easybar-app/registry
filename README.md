@@ -1,44 +1,40 @@
 # EasyBar Widget Registry
 
-This repository is the official discovery index for installable [EasyBar widgets](https://github.com/easybar-app/widgets). It contains metadata only; widget and library source remains in its owning repository.
+Official package registry for installable [EasyBar widgets](https://github.com/easybar-app/widgets).
 
 ## Layout
 
 ```text
 registry.toml      Registry identity and schema version
-packages/*.toml    Searchable package entries and immutable release metadata
-index.json         Generated machine-readable catalog consumed by clients
+packages/*.toml    Package metadata and published versions
+index.json         Generated catalog consumed by clients
 ```
 
-Each registry entry mirrors the package name, kind, latest version, description, and categories from the package's `package.toml`. The `source` table identifies its project page. Every `versions` entry points to an immutable GitHub release archive and pins its SHA-256 digest. Installers must verify that digest before extracting package content.
+Each package entry contains its name, kind, latest version, description, categories, source, and published versions.
+
+Published versions reference immutable release archives and include their SHA-256 digest for verification.
 
 ## Validation
 
-With the official widgets repository checked out beside this repository:
+With the widgets repository checked out beside this repository:
 
 ```sh
 make check
 ```
 
-The check validates every entry, cross-checks it against package metadata, reproduces each latest archive to verify its digest, and ensures `index.json` is current.
+This validates registry metadata, verifies published package archives and checksums, and ensures `index.json` is up to date.
 
-## Release synchronization
+## Synchronization
 
-The `Sync widget releases` workflow runs twice per hour and can also be started manually from
-GitHub Actions. It discovers published releases from `easybar-app/widgets`, downloads each package
-archive and checksum, verifies their SHA-256 digest, reads the packaged manifest, updates immutable
-version entries, regenerates `index.json`, validates the result, and commits only when the registry
-changed.
+Published releases from `easybar-app/widgets` are synchronized automatically.
 
-Existing versions are immutable. If a previously recorded archive or checksum changes, or a
-published historical release disappears, synchronization fails instead of rewriting trusted
-metadata.
+The synchronization process verifies release archives, updates version metadata, regenerates `index.json`, validates the registry, and commits changes when necessary.
 
-Synchronization only updates packages that already have a file below `packages/`. Adding a package
-to the official registry remains an explicit review decision; publishing a new version of an
-already registered package is automatic and requires no cross-repository secret.
+Existing published versions are immutable. Changes to previously recorded archives or checksums cause synchronization to fail.
 
-Run the same reconciliation locally with:
+Only packages already present under `packages/` are synchronized automatically. Adding a new package to the registry requires explicit review.
+
+Run the same process locally with:
 
 ```sh
 make sync

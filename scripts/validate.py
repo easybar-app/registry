@@ -54,7 +54,7 @@ def validate_versions(name: str, entry: dict) -> None:
 
 def validate_latest_digest(name: str, entry: dict, widgets_dir: Path) -> None:
     release = next(item for item in entry["versions"] if item["version"] == entry["latest"])
-    packager = widgets_dir / "scripts" / "package.py"
+    packager = widgets_dir / "scripts" / "release" / "package.py"
     with tempfile.TemporaryDirectory() as temporary_directory:
         result = subprocess.run(
             [

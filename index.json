@@ -9,7 +9,7 @@
       "description": "Shared Homebrew manual-upgrade policy for EasyBar widgets.",
       "entry_version": 1,
       "kind": "library",
-      "latest": "0.1.0",
+      "latest": "0.1.1",
       "name": "brew-policy",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -19,6 +19,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/brew-policy-v0.1.0/brew-policy-0.1.0.tar.gz",
           "sha256": "9b8bce2d9b90c74b081ce797394f8f8473ed9a88594d06a11e150e1b3ebdac76",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/brew-policy-v0.1.1/brew-policy-0.1.1.tar.gz",
+          "sha256": "647c7ec9d4b92fe0a14396d668ddbb4e33af93e57a1fc5bf40cdf74cff6cc31b",
+          "version": "0.1.1"
         }
       ]
     },
@@ -421,7 +426,7 @@
       "description": "Shared text, retry, and native-inbox helpers for official EasyBar widgets.",
       "entry_version": 1,
       "kind": "library",
-      "latest": "0.1.1",
+      "latest": "0.1.2",
       "name": "shared",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -436,6 +441,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/shared-v0.1.1/shared-0.1.1.tar.gz",
           "sha256": "f86b28dc9146e34a6edbee51e09175ef5ecf5a68c4b7c76c8afe3a0f4e0a9693",
           "version": "0.1.1"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/shared-v0.1.2/shared-0.1.2.tar.gz",
+          "sha256": "9e04d9c359fb375ee761d75b08c9a7b92162836294fe71e72440f9d93727f412",
+          "version": "0.1.2"
         }
       ]
     },
@@ -478,7 +488,7 @@
       "description": "Control a macOS Network Extension VPN service with scutil.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.1",
+      "latest": "0.1.3",
       "name": "wireguard",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -493,6 +503,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/wireguard-v0.1.1/wireguard-0.1.1.tar.gz",
           "sha256": "4ee83cfd3e76aaa9aab9a25203c6ed0cfd23a513e4bc56014230ed31a2a462c8",
           "version": "0.1.1"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/wireguard-v0.1.3/wireguard-0.1.3.tar.gz",
+          "sha256": "6835b249bc3dbaf9a5b473a5b1568350aefa503251a0b6c3ee1984a8b6b410d6",
+          "version": "0.1.3"
         }
       ]
     }

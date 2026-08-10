@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Validate registry entries and cross-check their package manifests."""
+"""Validate registry entries and cross-check their current package sources."""
 
 from __future__ import annotations
 
 import argparse
+from dataclasses import dataclass
+from functools import total_ordering
 import hashlib
 import re
 import subprocess
@@ -15,6 +17,55 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SEMVER = re.compile(r"[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z.-]+)?")
 SHA256 = re.compile(r"[0-9a-f]{64}")
+
+
+@total_ordering
+@dataclass(frozen=True)
+class SemanticVersion:
+    """Semantic version ordering used for source-versus-registry comparisons."""
+
+    major: int
+    minor: int
+    patch: int
+    prerelease: tuple[str, ...] = ()
+
+    @classmethod
+    def parse(cls, value: object) -> SemanticVersion | None:
+        if not isinstance(value, str) or not SEMVER.fullmatch(value):
+            return None
+
+        core, separator, prerelease = value.partition("-")
+        major, minor, patch = (int(component) for component in core.split("."))
+        identifiers = tuple(prerelease.split(".")) if separator else ()
+        return cls(major, minor, patch, identifiers)
+
+    def __lt__(self, other: object) -> bool:
+        if not isinstance(other, SemanticVersion):
+            return NotImplemented
+
+        left_core = (self.major, self.minor, self.patch)
+        right_core = (other.major, other.minor, other.patch)
+        if left_core != right_core:
+            return left_core < right_core
+        if not self.prerelease:
+            return False
+        if not other.prerelease:
+            return True
+
+        for left, right in zip(self.prerelease, other.prerelease):
+            if left == right:
+                continue
+            left_number = int(left) if left.isdigit() else None
+            right_number = int(right) if right.isdigit() else None
+            if left_number is not None and right_number is not None:
+                return left_number < right_number
+            if left_number is not None:
+                return True
+            if right_number is not None:
+                return False
+            return left < right
+
+        return len(self.prerelease) < len(other.prerelease)
 
 
 def load(path: Path) -> dict:
@@ -32,7 +83,7 @@ def validate_versions(name: str, entry: dict) -> None:
         if not isinstance(release, dict):
             raise ValueError(f"{name}: invalid version entry")
         version = release.get("version")
-        if not isinstance(version, str) or not SEMVER.fullmatch(version):
+        if SemanticVersion.parse(version) is None:
             raise ValueError(f"{name}: invalid release version")
         if version in seen:
             raise ValueError(f"{name}: duplicate release version: {version}")
@@ -50,6 +101,48 @@ def validate_versions(name: str, entry: dict) -> None:
 
     if entry["latest"] not in seen:
         raise ValueError(f"{name}: latest version is missing from versions")
+
+
+def validate_source_manifest(name: str, entry: dict, package: dict) -> bool:
+    """Validate the current source manifest and return whether it equals registry latest."""
+
+    if package.get("manifest_version") != 2:
+        raise ValueError(f"{name}: source manifest_version must be 2")
+    if package.get("name") != name:
+        raise ValueError(f"{name}: source package name does not match registry entry")
+    if package.get("kind") != entry.get("kind"):
+        raise ValueError(f"{name}: source package kind does not match registry entry")
+
+    minimum = package.get("minimum_easybar_kit_version")
+    if SemanticVersion.parse(minimum) is None:
+        raise ValueError(f"{name}: invalid minimum_easybar_kit_version")
+
+    source_version = SemanticVersion.parse(package.get("version"))
+    registry_version = SemanticVersion.parse(entry.get("latest"))
+    if source_version is None:
+        raise ValueError(f"{name}: invalid source package version")
+    if registry_version is None:
+        raise ValueError(f"{name}: invalid registry latest version")
+    if source_version < registry_version:
+        raise ValueError(
+            f"{name}: source version {package['version']} is older than registry latest {entry['latest']}"
+        )
+
+    if source_version != registry_version:
+        return False
+
+    for registry_key, package_key in (
+        ("name", "name"),
+        ("kind", "kind"),
+        ("latest", "version"),
+        ("description", "description"),
+        ("categories", "categories"),
+    ):
+        if entry.get(registry_key) != package.get(package_key):
+            raise ValueError(
+                f"{name}: registry {registry_key} does not match current package metadata"
+            )
+    return True
 
 
 def validate_latest_digest(name: str, entry: dict, widgets_dir: Path) -> None:
@@ -103,7 +196,7 @@ def main() -> int:
                 raise ValueError(f"duplicate registry package: {name}")
             if entry.get("kind") not in {"widget", "library"}:
                 raise ValueError(f"{name}: invalid kind")
-            if not isinstance(entry.get("latest"), str) or not SEMVER.fullmatch(entry["latest"]):
+            if SemanticVersion.parse(entry.get("latest")) is None:
                 raise ValueError(f"{name}: invalid latest version")
             source = entry.get("source", {})
             if source.get("repository") != "https://github.com/easybar-app/widgets":
@@ -111,20 +204,13 @@ def main() -> int:
             if set(source) != {"repository"}:
                 raise ValueError(f"{name}: source must only declare its repository")
             validate_versions(name, entry)
-            expected_manifest = f"packages/{name}/package.toml"
 
-            manifest_path = args.widgets_dir / expected_manifest
+            manifest_path = args.widgets_dir / "packages" / name / "package.toml"
             package = load(manifest_path)
-            for registry_key, package_key in (
-                ("name", "name"),
-                ("kind", "kind"),
-                ("latest", "version"),
-                ("description", "description"),
-                ("categories", "categories"),
-            ):
-                if entry.get(registry_key) != package.get(package_key):
-                    raise ValueError(f"{name}: registry {registry_key} does not match package metadata")
-            validate_latest_digest(name, entry, args.widgets_dir)
+            source_is_published_latest = validate_source_manifest(name, entry, package)
+            if source_is_published_latest:
+                validate_latest_digest(name, entry, args.widgets_dir)
+
             entries[name] = entry
 
         if not entries:

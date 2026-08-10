@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Synchronize registered packages with verified GitHub release assets."""
+"""Synchronize newly published EasyBarKit package releases into the registry."""
 
 from __future__ import annotations
 
@@ -25,6 +25,23 @@ SEMVER = re.compile(r"[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z.-]+)?")
 CHECKSUM = re.compile(r"([0-9a-f]{64})[ \t]+\*?([^\r\n]+)")
 MAX_ARCHIVE_BYTES = 32 * 1024 * 1024
 MAX_CHECKSUM_BYTES = 4096
+SUPPORTED_MANIFEST_FIELDS = {
+    "manifest_version",
+    "name",
+    "version",
+    "minimum_easybar_kit_version",
+    "kind",
+    "description",
+    "license",
+    "readme",
+    "categories",
+    "entrypoint",
+    "repository",
+    "dependencies",
+    "exports",
+    "requirements",
+    "settings",
+}
 
 
 def load(path: Path) -> dict:
@@ -91,13 +108,38 @@ def release_assets(release: dict, name: str, version: str) -> tuple[str, str]:
     return archive_url, checksum_url
 
 
-def verified_manifest(
+def validate_release_manifest(name: str, version: str, manifest: dict) -> None:
+    unsupported = set(manifest) - SUPPORTED_MANIFEST_FIELDS
+    if unsupported:
+        fields = ", ".join(sorted(unsupported))
+        raise ValueError(f"{name} {version}: unsupported package manifest fields: {fields}")
+    if manifest.get("manifest_version") != 2:
+        raise ValueError(f"{name} {version}: package manifest_version must be 2")
+    if manifest.get("name") != name or manifest.get("version") != version:
+        raise ValueError(f"{name} {version}: archive manifest identity does not match release")
+    if manifest.get("kind") not in {"widget", "library"}:
+        raise ValueError(f"{name} {version}: archive manifest kind is invalid")
+    if not isinstance(manifest.get("description"), str) or not manifest["description"]:
+        raise ValueError(f"{name} {version}: archive manifest description is invalid")
+    categories = manifest.get("categories")
+    if not isinstance(categories, list) or not categories or not all(
+        isinstance(category, str) and category for category in categories
+    ):
+        raise ValueError(f"{name} {version}: archive manifest categories are invalid")
+    minimum = manifest.get("minimum_easybar_kit_version")
+    if not isinstance(minimum, str) or not SEMVER.fullmatch(minimum):
+        raise ValueError(
+            f"{name} {version}: archive manifest minimum_easybar_kit_version is invalid"
+        )
+
+
+def verified_archive(
     name: str,
     version: str,
     archive_url: str,
     checksum_url: str,
     token: str | None,
-) -> tuple[dict, str]:
+) -> tuple[bytes, str]:
     archive, _ = request(archive_url, token, MAX_ARCHIVE_BYTES)
     checksum_data, _ = request(checksum_url, token, MAX_CHECKSUM_BYTES)
     checksum_text = checksum_data.decode("utf-8").strip()
@@ -109,6 +151,19 @@ def verified_manifest(
     actual_digest = hashlib.sha256(archive).hexdigest()
     if actual_digest != expected_digest:
         raise ValueError(f"{name} {version}: archive checksum does not match")
+    return archive, actual_digest
+
+
+def verified_manifest(
+    name: str,
+    version: str,
+    archive_url: str,
+    checksum_url: str,
+    token: str | None,
+) -> tuple[dict, str]:
+    archive, actual_digest = verified_archive(
+        name, version, archive_url, checksum_url, token
+    )
 
     try:
         with gzip.GzipFile(fileobj=io.BytesIO(archive), mode="rb") as compressed:
@@ -123,17 +178,7 @@ def verified_manifest(
     except (KeyError, OSError, tarfile.TarError, UnicodeDecodeError, tomllib.TOMLDecodeError) as error:
         raise ValueError(f"{name} {version}: invalid package archive: {error}") from error
 
-    if manifest.get("name") != name or manifest.get("version") != version:
-        raise ValueError(f"{name} {version}: archive manifest identity does not match release")
-    if manifest.get("kind") not in {"widget", "library"}:
-        raise ValueError(f"{name} {version}: archive manifest kind is invalid")
-    if not isinstance(manifest.get("description"), str) or not manifest["description"]:
-        raise ValueError(f"{name} {version}: archive manifest description is invalid")
-    categories = manifest.get("categories")
-    if not isinstance(categories, list) or not categories or not all(
-        isinstance(category, str) and category for category in categories
-    ):
-        raise ValueError(f"{name} {version}: archive manifest categories are invalid")
+    validate_release_manifest(name, version, manifest)
     return manifest, actual_digest
 
 
@@ -170,6 +215,94 @@ def render_entry(
             ]
         )
     return "\n".join(lines) + "\n"
+
+
+def synchronize_entry(
+    repository: str,
+    name: str,
+    entry: dict,
+    releases: list[tuple[str, dict]],
+    token: str | None,
+) -> str | None:
+    """Return replacement entry text when new manifest-v2 releases were discovered."""
+
+    existing_versions = entry.get("versions")
+    if not isinstance(existing_versions, list) or not existing_versions:
+        raise ValueError(f"{name}: registry entry contains no published versions")
+
+    existing_by_version: dict[str, dict[str, str]] = {}
+    for existing in existing_versions:
+        if not isinstance(existing, dict):
+            raise ValueError(f"{name}: invalid existing registry version entry")
+        version = existing.get("version")
+        archive = existing.get("archive")
+        digest = existing.get("sha256")
+        if not isinstance(version, str) or not SEMVER.fullmatch(version):
+            raise ValueError(f"{name}: invalid existing registry version")
+        if not isinstance(archive, str) or not isinstance(digest, str):
+            raise ValueError(f"{name} {version}: incomplete existing registry metadata")
+        if version in existing_by_version:
+            raise ValueError(f"{name}: duplicate existing registry version {version}")
+        existing_by_version[version] = {
+            "version": version,
+            "archive": archive,
+            "sha256": digest,
+        }
+
+    discovered_by_version: dict[str, dict] = {}
+    for version, release in releases:
+        if version in discovered_by_version:
+            raise ValueError(f"{name}: duplicate published release {version}")
+        discovered_by_version[version] = release
+
+    missing = set(existing_by_version) - set(discovered_by_version)
+    if missing:
+        raise ValueError(
+            f"{name}: published releases disappeared: {', '.join(sorted(missing, key=semver_key))}"
+        )
+
+    for version, existing in existing_by_version.items():
+        archive_url, checksum_url = release_assets(
+            discovered_by_version[version], name, version
+        )
+        if archive_url != existing["archive"]:
+            raise ValueError(f"{name} {version}: published release archive URL changed")
+        _, digest = verified_archive(name, version, archive_url, checksum_url, token)
+        if digest != existing["sha256"]:
+            raise ValueError(f"{name} {version}: published release checksum changed")
+
+    latest_existing = max(existing_by_version, key=semver_key)
+    new_versions = sorted(
+        set(discovered_by_version) - set(existing_by_version), key=semver_key
+    )
+    if not new_versions:
+        return None
+    if any(semver_key(version) <= semver_key(latest_existing) for version in new_versions):
+        raise ValueError(
+            f"{name}: new release history predates registry latest {latest_existing}"
+        )
+
+    versions = list(existing_by_version.values())
+    manifests: dict[str, dict] = {}
+    expected_kind = entry.get("kind")
+    for version in new_versions:
+        archive_url, checksum_url = release_assets(discovered_by_version[version], name, version)
+        manifest, digest = verified_manifest(
+            name, version, archive_url, checksum_url, token
+        )
+        if manifest.get("kind") != expected_kind:
+            raise ValueError(f"{name} {version}: package kind changed from {expected_kind}")
+        manifests[version] = manifest
+        versions.append(
+            {"version": version, "archive": archive_url, "sha256": digest}
+        )
+
+    versions.sort(key=lambda item: semver_key(item["version"]))
+    latest = versions[-1]["version"]
+    latest_manifest = manifests.get(latest)
+    if latest_manifest is None:
+        raise ValueError(f"{name}: synchronized latest release did not use manifest v2")
+    return render_entry(repository, name, latest_manifest, versions)
 
 
 def main() -> int:
@@ -210,48 +343,12 @@ def main() -> int:
             releases = discovered[name]
             if not releases:
                 raise ValueError(f"{name}: no published releases found")
-            existing_versions = {
-                release.get("version"): release for release in entry.get("versions", [])
-            }
-            versions: list[dict[str, str]] = []
-            manifests: dict[str, dict] = {}
-            seen: set[str] = set()
-            for version, release in sorted(
-                releases, key=lambda item: semver_key(item[0])
-            ):
-                if version in seen:
-                    raise ValueError(f"{name}: duplicate published release {version}")
-                seen.add(version)
-                archive_url, checksum_url = release_assets(release, name, version)
-                manifest, digest = verified_manifest(
-                    name, version, archive_url, checksum_url, token
-                )
-                existing = existing_versions.get(version)
-                if existing is not None and (
-                    existing.get("archive") != archive_url
-                    or existing.get("sha256") != digest
-                ):
-                    raise ValueError(
-                        f"{name} {version}: published release metadata is immutable"
-                    )
-                manifests[version] = manifest
-                versions.append(
-                    {"version": version, "archive": archive_url, "sha256": digest}
-                )
-
-            missing = set(existing_versions) - seen
-            if missing:
-                raise ValueError(
-                    f"{name}: published releases disappeared: {', '.join(sorted(missing))}"
-                )
-
-            latest = versions[-1]["version"]
-            rendered = render_entry(args.repository, name, manifests[latest], versions)
-            current = path.read_text(encoding="utf-8")
-            if current != rendered:
-                changed.append(name)
-                if not args.check:
-                    path.write_text(rendered, encoding="utf-8")
+            rendered = synchronize_entry(args.repository, name, entry, releases, token)
+            if rendered is None:
+                continue
+            changed.append(name)
+            if not args.check:
+                path.write_text(rendered, encoding="utf-8")
 
         if args.check and changed:
             raise ValueError("registry is stale for: " + ", ".join(changed))

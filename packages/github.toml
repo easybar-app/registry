@@ -1,7 +1,7 @@
 entry_version = 1
 name = "github"
 kind = "widget"
-latest = "0.1.0"
+latest = "0.1.2"
 description = "GitHub notifications in a standalone popup."
 categories = ["developer-tools", "notifications"]
 
@@ -12,3 +12,8 @@ repository = "https://github.com/easybar-app/widgets"
 version = "0.1.0"
 archive = "https://github.com/easybar-app/widgets/releases/download/github-v0.1.0/github-0.1.0.tar.gz"
 sha256 = "b5b2c72a70746f8451d7579255b4e27db20b3da848d4193075b25758af09f15d"
+
+[[versions]]
+version = "0.1.2"
+archive = "https://github.com/easybar-app/widgets/releases/download/github-v0.1.2/github-0.1.2.tar.gz"
+sha256 = "f973c0c0424a4e485943e49d8955b56c15871f0900c35abd97b725dba4f1d144"

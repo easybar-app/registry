@@ -1,7 +1,7 @@
 entry_version = 1
 name = "gitlab"
 kind = "widget"
-latest = "0.1.0"
+latest = "0.1.2"
 description = "Assigned GitLab issues and merge requests in a standalone popup."
 categories = ["developer-tools", "notifications"]
 
@@ -12,3 +12,8 @@ repository = "https://github.com/easybar-app/widgets"
 version = "0.1.0"
 archive = "https://github.com/easybar-app/widgets/releases/download/gitlab-v0.1.0/gitlab-0.1.0.tar.gz"
 sha256 = "6f45140a379819e2300cf3333c4f9507ef0edda549da97876af14274bd5273dc"
+
+[[versions]]
+version = "0.1.2"
+archive = "https://github.com/easybar-app/widgets/releases/download/gitlab-v0.1.2/gitlab-0.1.2.tar.gz"
+sha256 = "7f8a040ecf7cd47ed6d2f1f190464ade06263eb2d57e3fa8aae1bae092a385ad"

@@ -1,7 +1,7 @@
 entry_version = 1
 name = "brew"
 kind = "widget"
-latest = "0.2.1"
+latest = "0.2.3"
 description = "Homebrew updates and upgrades in a standalone popup."
 categories = ["developer-tools", "system"]
 
@@ -22,3 +22,8 @@ sha256 = "1c87a14a282258b34b6a30250a47877e3fde9731ddbd11875f87392a221a76e3"
 version = "0.2.1"
 archive = "https://github.com/easybar-app/widgets/releases/download/brew-v0.2.1/brew-0.2.1.tar.gz"
 sha256 = "f40b210e92049c6cd9113a3e21265620a842d552fe3e00d3acafe26d20f0f3fe"
+
+[[versions]]
+version = "0.2.3"
+archive = "https://github.com/easybar-app/widgets/releases/download/brew-v0.2.3/brew-0.2.3.tar.gz"
+sha256 = "dee4bbdd1b32b31cf523ea673cf7aedf2ec49fc593ca55cc485c4dca1cdb7bbf"

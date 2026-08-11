@@ -1,7 +1,7 @@
 entry_version = 1
 name = "shared"
 kind = "library"
-latest = "0.1.2"
+latest = "0.1.3"
 description = "Shared text, retry, and native-inbox helpers for official EasyBar widgets."
 categories = ["library"]
 
@@ -22,3 +22,8 @@ sha256 = "f86b28dc9146e34a6edbee51e09175ef5ecf5a68c4b7c76c8afe3a0f4e0a9693"
 version = "0.1.2"
 archive = "https://github.com/easybar-app/widgets/releases/download/shared-v0.1.2/shared-0.1.2.tar.gz"
 sha256 = "9e04d9c359fb375ee761d75b08c9a7b92162836294fe71e72440f9d93727f412"
+
+[[versions]]
+version = "0.1.3"
+archive = "https://github.com/easybar-app/widgets/releases/download/shared-v0.1.3/shared-0.1.3.tar.gz"
+sha256 = "246ee06c761472fa017ca03f2bb268964550ce29d51bf9e0f98b521270fa41c1"

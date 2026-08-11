@@ -1,7 +1,7 @@
 entry_version = 1
 name = "wireguard"
 kind = "widget"
-latest = "0.1.3"
+latest = "0.1.4"
 description = "Control a macOS Network Extension VPN service with scutil."
 categories = ["network", "system"]
 
@@ -22,3 +22,8 @@ sha256 = "4ee83cfd3e76aaa9aab9a25203c6ed0cfd23a513e4bc56014230ed31a2a462c8"
 version = "0.1.3"
 archive = "https://github.com/easybar-app/widgets/releases/download/wireguard-v0.1.3/wireguard-0.1.3.tar.gz"
 sha256 = "6835b249bc3dbaf9a5b473a5b1568350aefa503251a0b6c3ee1984a8b6b410d6"
+
+[[versions]]
+version = "0.1.4"
+archive = "https://github.com/easybar-app/widgets/releases/download/wireguard-v0.1.4/wireguard-0.1.4.tar.gz"
+sha256 = "26cce9a47f7f6c8794338fb5b0c2de3e3412bc31f3a1777f6159c5d005378649"

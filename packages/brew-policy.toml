@@ -1,7 +1,7 @@
 entry_version = 1
 name = "brew-policy"
 kind = "library"
-latest = "0.1.1"
+latest = "0.1.2"
 description = "Shared Homebrew manual-upgrade policy for EasyBar widgets."
 categories = ["developer-tools", "library", "system"]
 
@@ -17,3 +17,8 @@ sha256 = "9b8bce2d9b90c74b081ce797394f8f8473ed9a88594d06a11e150e1b3ebdac76"
 version = "0.1.1"
 archive = "https://github.com/easybar-app/widgets/releases/download/brew-policy-v0.1.1/brew-policy-0.1.1.tar.gz"
 sha256 = "647c7ec9d4b92fe0a14396d668ddbb4e33af93e57a1fc5bf40cdf74cff6cc31b"
+
+[[versions]]
+version = "0.1.2"
+archive = "https://github.com/easybar-app/widgets/releases/download/brew-policy-v0.1.2/brew-policy-0.1.2.tar.gz"
+sha256 = "92d3e38b1f1e2779176f8aae0683ec371b44c5d1d39dff8c4d679ddbe9c6b571"

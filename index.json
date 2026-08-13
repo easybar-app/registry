@@ -509,6 +509,27 @@
     },
     {
       "categories": [
+        "developer-tools",
+        "system"
+      ],
+      "description": "Available mason.nvim tool updates in a standalone status item.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "nvim-mason",
+      "source": {
+        "repository": "https://github.com/easybar-app/widgets"
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/nvim-mason-v0.1.0/nvim-mason-0.1.0.tar.gz",
+          "sha256": "15119513924a89a96e08c427ab3475e2cc976eb01b44a27a4eb977351642857e",
+          "version": "0.1.0"
+        }
+      ]
+    },
+    {
+      "categories": [
         "library"
       ],
       "description": "Shared text, retry, and native-inbox helpers for official EasyBar widgets.",

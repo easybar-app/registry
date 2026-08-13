@@ -1,0 +1,14 @@
+entry_version = 1
+name = "nvim-lazy"
+kind = "widget"
+latest = "0.1.0"
+description = "Available lazy.nvim plugin updates in a standalone status item."
+categories = ["developer-tools", "system"]
+
+[source]
+repository = "https://github.com/easybar-app/widgets"
+
+[[versions]]
+version = "0.1.0"
+archive = "https://github.com/easybar-app/widgets/releases/download/nvim-lazy-v0.1.0/nvim-lazy-0.1.0.tar.gz"
+sha256 = "de99380426933636ebbbcde9e0572b07184345b9c88cad971d6e0fed2bfa19c4"

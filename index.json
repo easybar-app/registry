@@ -550,7 +550,7 @@
       "description": "Tailscale status, connection controls, and exit-node selection.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.4",
+      "latest": "0.1.5",
       "name": "tailscale",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -575,6 +575,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/tailscale-v0.1.4/tailscale-0.1.4.tar.gz",
           "sha256": "0156af51cf744dc080df3352274c7fa37137087b48797a358da119e4ba1445cf",
           "version": "0.1.4"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/tailscale-v0.1.5/tailscale-0.1.5.tar.gz",
+          "sha256": "2a02a8b82627c5da4393d3de64349e4eb984987cf437a2e1b75068d3fdc71614",
+          "version": "0.1.5"
         }
       ]
     },

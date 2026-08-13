@@ -379,6 +379,28 @@
     },
     {
       "categories": [
+        "developer-tools",
+        "inbox",
+        "system"
+      ],
+      "description": "lazy.nvim plugin updates and actions in EasyBar's native inbox.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "inbox-nvim-lazy",
+      "source": {
+        "repository": "https://github.com/easybar-app/widgets"
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-nvim-lazy-v0.1.0/inbox-nvim-lazy-0.1.0.tar.gz",
+          "sha256": "af002ef576a6f73253f8d17b1de09ce1918a868fca9d5f739b776053db48c345",
+          "version": "0.1.0"
+        }
+      ]
+    },
+    {
+      "categories": [
         "inbox",
         "system",
         "utilities"

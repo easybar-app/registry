@@ -37,7 +37,8 @@ def main() -> int:
         return 0
 
     OUTPUT.write_text(rendered, encoding="utf-8")
-    print(f"Generated {OUTPUT.relative_to(ROOT)} with {len(packages)} packages.")
+    print(
+        f"Generated {OUTPUT.relative_to(ROOT)} with {len(packages)} packages.")
     return 0
 
 

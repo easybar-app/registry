@@ -1,7 +1,7 @@
 entry_version = 1
 name = "inbox-nvim-lazy"
 kind = "widget"
-latest = "0.1.0"
+latest = "0.2.0"
 description = "lazy.nvim plugin updates and actions in EasyBar's native inbox."
 categories = ["developer-tools", "inbox", "system"]
 
@@ -12,3 +12,8 @@ repository = "https://github.com/easybar-app/widgets"
 version = "0.1.0"
 archive = "https://github.com/easybar-app/widgets/releases/download/inbox-nvim-lazy-v0.1.0/inbox-nvim-lazy-0.1.0.tar.gz"
 sha256 = "af002ef576a6f73253f8d17b1de09ce1918a868fca9d5f739b776053db48c345"
+
+[[versions]]
+version = "0.2.0"
+archive = "https://github.com/easybar-app/widgets/releases/download/inbox-nvim-lazy-v0.2.0/inbox-nvim-lazy-0.2.0.tar.gz"
+sha256 = "50c1f44d8fe0fcd511033cffb979e0439d2534d748ef423fa16f952bbd1094f8"

@@ -40,7 +40,7 @@
       "description": "Homebrew updates and upgrades in a standalone popup.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.2.4",
+      "latest": "0.3.0",
       "name": "brew",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -70,6 +70,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/brew-v0.2.4/brew-0.2.4.tar.gz",
           "sha256": "651b74551fde9736adf5acf95391a0a64fc3cd0be56b20c37783c5faa6d4a602",
           "version": "0.2.4"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/brew-v0.3.0/brew-0.3.0.tar.gz",
+          "sha256": "deaf03136e4b7f8a8972160543e9b75b50429f78947365ab1b0cd2571d914835",
+          "version": "0.3.0"
         }
       ]
     },
@@ -180,7 +185,7 @@
       "description": "Homebrew updates and actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.4.4",
+      "latest": "0.5.0",
       "name": "inbox-brew",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -235,6 +240,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.4.4/inbox-brew-0.4.4.tar.gz",
           "sha256": "36c8048a936c70ce6ef68ebc6322502748ca77358ae573bb2ca167ee65b1f4b6",
           "version": "0.4.4"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.5.0/inbox-brew-0.5.0.tar.gz",
+          "sha256": "0851b5d790d2519830f0df882f61546b256e168292c5de23a991224fbacd9e96",
+          "version": "0.5.0"
         }
       ]
     },
@@ -386,7 +396,7 @@
       "description": "lazy.nvim plugin updates and actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.0",
+      "latest": "0.2.0",
       "name": "inbox-nvim-lazy",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -396,6 +406,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-nvim-lazy-v0.1.0/inbox-nvim-lazy-0.1.0.tar.gz",
           "sha256": "af002ef576a6f73253f8d17b1de09ce1918a868fca9d5f739b776053db48c345",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-nvim-lazy-v0.2.0/inbox-nvim-lazy-0.2.0.tar.gz",
+          "sha256": "50c1f44d8fe0fcd511033cffb979e0439d2534d748ef423fa16f952bbd1094f8",
+          "version": "0.2.0"
         }
       ]
     },
@@ -408,7 +423,7 @@
       "description": "mason.nvim tool updates and actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.0",
+      "latest": "0.2.0",
       "name": "inbox-nvim-mason",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -418,6 +433,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-nvim-mason-v0.1.0/inbox-nvim-mason-0.1.0.tar.gz",
           "sha256": "4fa21c938be414deb2ad8c4f35e751f3c0d8e02ab76d9f2512f50864310dacdf",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-nvim-mason-v0.2.0/inbox-nvim-mason-0.2.0.tar.gz",
+          "sha256": "32cb4816e3263eee106fdf8aa73574af6b0bc5b85b3f71c3a2a269e6ad8fc3a4",
+          "version": "0.2.0"
         }
       ]
     },
@@ -516,7 +536,7 @@
       "description": "Available lazy.nvim plugin updates in a standalone status item.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.0",
+      "latest": "0.2.0",
       "name": "nvim-lazy",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -526,6 +546,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/nvim-lazy-v0.1.0/nvim-lazy-0.1.0.tar.gz",
           "sha256": "de99380426933636ebbbcde9e0572b07184345b9c88cad971d6e0fed2bfa19c4",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/nvim-lazy-v0.2.0/nvim-lazy-0.2.0.tar.gz",
+          "sha256": "9822d62cdbcc69fa988f7241dbb32bdeeabec7b2750b75359e6a8c1bb58a6979",
+          "version": "0.2.0"
         }
       ]
     },
@@ -537,7 +562,7 @@
       "description": "Available mason.nvim tool updates in a standalone status item.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.1.0",
+      "latest": "0.2.0",
       "name": "nvim-mason",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -547,6 +572,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/nvim-mason-v0.1.0/nvim-mason-0.1.0.tar.gz",
           "sha256": "15119513924a89a96e08c427ab3475e2cc976eb01b44a27a4eb977351642857e",
           "version": "0.1.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/nvim-mason-v0.2.0/nvim-mason-0.2.0.tar.gz",
+          "sha256": "96244d2512868c90391920ab36f87374653ad1c7d9f39f11403ad347a7295ad9",
+          "version": "0.2.0"
         }
       ]
     },

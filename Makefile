@@ -72,7 +72,7 @@ generate: ## Generate the package index.
 	@$(PYTHON) scripts/build_index.py
 
 sync: ## Synchronize published package versions and regenerate the index.
-	@$(PYTHON) scripts/sync_releases.py
+	@$(PYTHON) scripts/sync_releases.py --widgets-dir "$(WIDGETS_DIR)"
 	@$(PYTHON) scripts/build_index.py
 
 ##@ Maintenance

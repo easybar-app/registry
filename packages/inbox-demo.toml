@@ -1,0 +1,14 @@
+entry_version = 1
+name = "inbox-demo"
+kind = "widget"
+latest = "0.1.1"
+description = "Representative GitHub, GitLab, and Homebrew messages for EasyBar's native inbox."
+categories = ["developer-tools", "inbox", "notifications"]
+
+[source]
+repository = "https://github.com/easybar-app/widgets"
+
+[[versions]]
+version = "0.1.1"
+archive = "https://github.com/easybar-app/widgets/releases/download/inbox-demo-v0.1.1/inbox-demo-0.1.1.tar.gz"
+sha256 = "d6b61f0ca77daea9b85f76b941c3cf532ce446b2d673a02e804ab8e625418e6e"

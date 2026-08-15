@@ -28,7 +28,7 @@ jobs:
       - name: Synchronize published releases
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: make sync
+        run: make sync WIDGETS_DIR=widgets-source
 
       - name: Validate registry
         run: make check WIDGETS_DIR=widgets-source

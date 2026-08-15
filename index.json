@@ -254,6 +254,28 @@
         "inbox",
         "notifications"
       ],
+      "description": "Representative GitHub, GitLab, and Homebrew messages for EasyBar's native inbox.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "inbox-demo",
+      "source": {
+        "repository": "https://github.com/easybar-app/widgets"
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-demo-v0.1.0/inbox-demo-0.1.0.tar.gz",
+          "sha256": "<SHA256_FROM_THE_0.1.0_RELEASE>",
+          "version": "0.1.0"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "developer-tools",
+        "inbox",
+        "notifications"
+      ],
       "description": "GitHub notifications and pull-request actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",

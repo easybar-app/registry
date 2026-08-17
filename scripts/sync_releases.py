@@ -29,11 +29,13 @@ MAX_MANIFEST_BYTES = 1024 * 1024
 
 
 def load(path: Path) -> dict:
+    """Load a TOML document."""
     with path.open("rb") as handle:
         return tomllib.load(handle)
 
 
 def load_current_packages(widgets_dir: Path) -> dict[str, dict]:
+    """Load current package manifests."""
     packages_dir = widgets_dir / "packages"
     if not packages_dir.is_dir():
         raise ValueError(
@@ -56,6 +58,7 @@ def load_current_packages(widgets_dir: Path) -> dict[str, dict]:
 
 
 def load_registry_entries() -> dict[str, tuple[Path, dict]]:
+    """Load registry entries by package name."""
     entries: dict[str, tuple[Path, dict]] = {}
     for path in sorted(PACKAGES.glob("*.toml")):
         entry = load(path)
@@ -69,6 +72,7 @@ def load_registry_entries() -> dict[str, tuple[Path, dict]]:
 
 
 def request(url: str, token: str | None, limit: int) -> tuple[bytes, dict[str, str]]:
+    """Fetch a URL and return its body and headers."""
     headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": "easybar-registry",
@@ -88,6 +92,7 @@ def request(url: str, token: str | None, limit: int) -> tuple[bytes, dict[str, s
 
 
 def github_releases(repository: str, token: str | None) -> list[dict]:
+    """Load all GitHub releases for a repository."""
     releases: list[dict] = []
     page = 1
     while True:
@@ -106,6 +111,7 @@ def github_releases(repository: str, token: str | None) -> list[dict]:
 
 
 def semver_key(version: str) -> tuple:
+    """Return a sortable semantic-version key."""
     core, separator, prerelease = version.partition("-")
     major, minor, patch = (int(component) for component in core.split("."))
     if not separator:
@@ -119,6 +125,7 @@ def semver_key(version: str) -> tuple:
 
 
 def parse_package_tag(tag: str) -> tuple[str, str] | None:
+    """Parse a package name and version from a tag."""
     name, separator, version = tag.rpartition("-v")
     if separator == "" or name == "" or not SEMVER.fullmatch(version):
         return None
@@ -126,6 +133,7 @@ def parse_package_tag(tag: str) -> tuple[str, str] | None:
 
 
 def release_has_package_assets(release: dict, name: str, version: str) -> bool:
+    """Return whether a release has both package assets."""
     archive_name = f"{name}-{version}.tar.gz"
     checksum_name = f"{archive_name}.sha256"
 
@@ -141,6 +149,7 @@ def discover_package_releases(
     releases: list[dict],
     package_names: set[str],
 ) -> dict[str, list[tuple[str, dict]]]:
+    """Discover valid package releases from GitHub."""
     discovered: dict[str, list[tuple[str, dict]]] = {
         name: [] for name in package_names
     }
@@ -174,6 +183,7 @@ def releases_by_version(
     name: str,
     releases: list[tuple[str, dict]],
 ) -> dict[str, dict]:
+    """Index releases by package version."""
     discovered: dict[str, dict] = {}
 
     for version, release in releases:
@@ -185,6 +195,7 @@ def releases_by_version(
 
 
 def release_assets(release: dict, name: str, version: str) -> tuple[str, str]:
+    """Return package asset URLs for a release."""
     archive_name = f"{name}-{version}.tar.gz"
     checksum_name = f"{archive_name}.sha256"
 
@@ -209,6 +220,7 @@ def verified_archive(
     checksum_url: str,
     token: str | None,
 ) -> tuple[bytes, str]:
+    """Download and verify a release archive."""
     archive, _ = request(archive_url, token, MAX_ARCHIVE_BYTES)
     checksum_data, _ = request(checksum_url, token, MAX_CHECKSUM_BYTES)
 
@@ -227,6 +239,7 @@ def verified_archive(
 
 
 def manifest_from_archive(name: str, version: str, archive: bytes) -> dict:
+    """Load package metadata from a release archive."""
     try:
         with gzip.GzipFile(fileobj=io.BytesIO(archive), mode="rb") as compressed:
             with tarfile.open(fileobj=compressed, mode="r:") as package_archive:
@@ -296,6 +309,7 @@ def validate_registry_metadata(name: str, version: str, manifest: dict) -> None:
 
 
 def quote(value: str) -> str:
+    """Quote a string as a TOML value."""
     return json.dumps(value, ensure_ascii=False)
 
 
@@ -305,6 +319,7 @@ def render_entry(
     latest_manifest: dict,
     versions: list[dict[str, str]],
 ) -> str:
+    """Render a registry entry as TOML."""
     categories = ", ".join(
         quote(category) for category in latest_manifest["categories"]
     )
@@ -546,6 +561,7 @@ def synchronize_entry(
 
 
 def main() -> int:
+    """Run the command-line entry point."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--repository", default=DEFAULT_REPOSITORY)
     parser.add_argument("--widgets-dir", type=Path, required=True)

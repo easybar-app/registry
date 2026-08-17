@@ -14,6 +14,7 @@ OUTPUT = ROOT / "index.json"
 
 
 def main() -> int:
+    """Run the command-line entry point."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()

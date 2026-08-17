@@ -31,6 +31,7 @@ class SemanticVersion:
 
     @classmethod
     def parse(cls, value: object) -> SemanticVersion | None:
+        """Parse a semantic version when the value is valid."""
         if not isinstance(value, str) or not SEMVER.fullmatch(value):
             return None
 
@@ -40,6 +41,7 @@ class SemanticVersion:
         return cls(major, minor, patch, identifiers)
 
     def __lt__(self, other: object) -> bool:
+        """Compare versions using semantic-version precedence."""
         if not isinstance(other, SemanticVersion):
             return NotImplemented
 
@@ -69,11 +71,13 @@ class SemanticVersion:
 
 
 def load(path: Path) -> dict:
+    """Load a TOML document."""
     with path.open("rb") as handle:
         return tomllib.load(handle)
 
 
 def validate_versions(name: str, entry: dict) -> None:
+    """Validate ordering and uniqueness of registry versions."""
     versions = entry.get("versions")
     if not isinstance(versions, list) or not versions:
         raise ValueError(f"{name}: versions must contain at least one release")
@@ -146,6 +150,7 @@ def validate_source_manifest(name: str, entry: dict, package: dict) -> bool:
 
 
 def validate_latest_digest(name: str, entry: dict, widgets_dir: Path) -> None:
+    """Validate the latest release archive digest."""
     release = next(item for item in entry["versions"] if item["version"] == entry["latest"])
     packager = widgets_dir / "scripts" / "release" / "package.py"
     with tempfile.TemporaryDirectory() as temporary_directory:
@@ -176,6 +181,7 @@ def validate_latest_digest(name: str, entry: dict, widgets_dir: Path) -> None:
 
 
 def main() -> int:
+    """Run the command-line entry point."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--widgets-dir", type=Path, required=True)
     args = parser.parse_args()

@@ -274,6 +274,28 @@
       "categories": [
         "developer-tools",
         "inbox",
+        "system"
+      ],
+      "description": "Active GitHub service incidents in EasyBar's native inbox.",
+      "entry_version": 1,
+      "kind": "widget",
+      "latest": "0.1.0",
+      "name": "inbox-github-status",
+      "source": {
+        "repository": "https://github.com/easybar-app/widgets"
+      },
+      "versions": [
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-github-status-v0.1.0/inbox-github-status-0.1.0.tar.gz",
+          "sha256": "84610009f5211e695672af07ec827dfdf02f7d8867a3b18280650f3536f97070",
+          "version": "0.1.0"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "developer-tools",
+        "inbox",
         "notifications"
       ],
       "description": "GitHub notifications and pull-request actions in EasyBar's native inbox.",

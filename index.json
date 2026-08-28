@@ -185,7 +185,7 @@
       "description": "Homebrew updates and actions in EasyBar's native inbox.",
       "entry_version": 1,
       "kind": "widget",
-      "latest": "0.5.0",
+      "latest": "0.6.0",
       "name": "inbox-brew",
       "source": {
         "repository": "https://github.com/easybar-app/widgets"
@@ -245,6 +245,11 @@
           "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.5.0/inbox-brew-0.5.0.tar.gz",
           "sha256": "0851b5d790d2519830f0df882f61546b256e168292c5de23a991224fbacd9e96",
           "version": "0.5.0"
+        },
+        {
+          "archive": "https://github.com/easybar-app/widgets/releases/download/inbox-brew-v0.6.0/inbox-brew-0.6.0.tar.gz",
+          "sha256": "d1e1a5a2f01d9b582b09d9e2fb09bf1e94634aebb71e3c06dd7ec4611038454f",
+          "version": "0.6.0"
         }
       ]
     },

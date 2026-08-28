@@ -1,7 +1,7 @@
 entry_version = 1
 name = "inbox-github-status"
 kind = "widget"
-latest = "0.1.0"
+latest = "0.1.1"
 description = "Active GitHub service incidents in EasyBar's native inbox."
 categories = ["developer-tools", "inbox", "system"]
 
@@ -12,3 +12,8 @@ repository = "https://github.com/easybar-app/widgets"
 version = "0.1.0"
 archive = "https://github.com/easybar-app/widgets/releases/download/inbox-github-status-v0.1.0/inbox-github-status-0.1.0.tar.gz"
 sha256 = "84610009f5211e695672af07ec827dfdf02f7d8867a3b18280650f3536f97070"
+
+[[versions]]
+version = "0.1.1"
+archive = "https://github.com/easybar-app/widgets/releases/download/inbox-github-status-v0.1.1/inbox-github-status-0.1.1.tar.gz"
+sha256 = "5a89b6644e65e1400241681d4d0dcdff2acb278118a9252bd284f554360a3765"

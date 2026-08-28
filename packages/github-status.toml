@@ -1,0 +1,14 @@
+entry_version = 1
+name = "github-status"
+kind = "widget"
+latest = "0.1.1"
+description = "Live GitHub service health in the menu bar."
+categories = ["developer-tools", "system"]
+
+[source]
+repository = "https://github.com/easybar-app/widgets"
+
+[[versions]]
+version = "0.1.1"
+archive = "https://github.com/easybar-app/widgets/releases/download/github-status-v0.1.1/github-status-0.1.1.tar.gz"
+sha256 = "dc3de31fbd428ef69fd30a808a72125f8f9d438ad255f5c9e829e243ec3ed4f2"

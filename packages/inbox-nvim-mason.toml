@@ -1,7 +1,7 @@
 entry_version = 1
 name = "inbox-nvim-mason"
 kind = "widget"
-latest = "0.2.0"
+latest = "0.2.1"
 description = "mason.nvim tool updates and actions in EasyBar's native inbox."
 categories = ["developer-tools", "inbox", "system"]
 
@@ -17,3 +17,8 @@ sha256 = "4fa21c938be414deb2ad8c4f35e751f3c0d8e02ab76d9f2512f50864310dacdf"
 version = "0.2.0"
 archive = "https://github.com/easybar-app/widgets/releases/download/inbox-nvim-mason-v0.2.0/inbox-nvim-mason-0.2.0.tar.gz"
 sha256 = "32cb4816e3263eee106fdf8aa73574af6b0bc5b85b3f71c3a2a269e6ad8fc3a4"
+
+[[versions]]
+version = "0.2.1"
+archive = "https://github.com/easybar-app/widgets/releases/download/inbox-nvim-mason-v0.2.1/inbox-nvim-mason-0.2.1.tar.gz"
+sha256 = "ac3d07370745009db1256e7f5044ade8414a319d339939ba7c5de8255516dff9"

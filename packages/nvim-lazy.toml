@@ -1,7 +1,7 @@
 entry_version = 1
 name = "nvim-lazy"
 kind = "widget"
-latest = "0.2.0"
+latest = "0.2.1"
 description = "Available lazy.nvim plugin updates in a standalone status item."
 categories = ["developer-tools", "system"]
 
@@ -17,3 +17,8 @@ sha256 = "de99380426933636ebbbcde9e0572b07184345b9c88cad971d6e0fed2bfa19c4"
 version = "0.2.0"
 archive = "https://github.com/easybar-app/widgets/releases/download/nvim-lazy-v0.2.0/nvim-lazy-0.2.0.tar.gz"
 sha256 = "9822d62cdbcc69fa988f7241dbb32bdeeabec7b2750b75359e6a8c1bb58a6979"
+
+[[versions]]
+version = "0.2.1"
+archive = "https://github.com/easybar-app/widgets/releases/download/nvim-lazy-v0.2.1/nvim-lazy-0.2.1.tar.gz"
+sha256 = "2c94e282c0da849f7d2f88fcd5454784f367c91a895dbcb6e71bedc88e77dbcc"

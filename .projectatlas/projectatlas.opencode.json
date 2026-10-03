@@ -1,0 +1,20 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "projectatlas": {
+      "type": "local",
+      "command": [
+        "/Users/qiwi/bin/projectatlas",
+        "--require-version",
+        "0.4.5",
+        "--db",
+        "/Users/qiwi/easybar/registry/.projectatlas/projectatlas.db",
+        "--config",
+        "/Users/qiwi/easybar/registry/.projectatlas/config.toml",
+        "mcp"
+      ],
+      "cwd": "/Users/qiwi/easybar/registry",
+      "enabled": true
+    }
+  }
+}
